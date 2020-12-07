@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class SmallestNonconstructibleValue {
+    /* Concreate examples */
     public static int smallestNonconstructibleValue(List<Integer> A) {
         Collections.sort(A);
         int maxConstructibleValue = 0;

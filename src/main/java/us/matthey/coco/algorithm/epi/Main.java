@@ -1,6 +1,6 @@
 package us.matthey.coco.algorithm.epi;
 
-import us.matthey.coco.algorithm.epi.ch5.java.SmallestNonconstructibleValue;
+import us.matthey.coco.algorithm.epi.ch5.SmallestNonconstructibleValue;
 
 import java.util.Arrays;
 
