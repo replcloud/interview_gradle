@@ -1,6 +1,6 @@
 package us.matthey.coco.algorithm.epi;
 
-import us.matthey.coco.algorithm.leetcode.ReverseBits;
+import us.matthey.coco.algorithm.epi.ch7strings.InterconvertStringsIntegers;
 
 
 public class Main {
@@ -16,6 +16,6 @@ public class Main {
 //            System.out.println(PrimitiveType.parity3(i));
 //        }
 
-        System.out.println(ReverseBits.reverseBits(3));
+        System.out.println(InterconvertStringsIntegers.intToString(0));
     }
 }

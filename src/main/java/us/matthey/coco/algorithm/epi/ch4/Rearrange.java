@@ -1,4 +1,4 @@
-package us.matthey.coco.algorithm.epi.ch5;
+package us.matthey.coco.algorithm.epi.ch4;
 
 import java.util.Collections;
 import java.util.List;

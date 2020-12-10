@@ -1,4 +1,4 @@
-package us.matthey.coco.algorithm.epi.ch6;
+package us.matthey.coco.algorithm.epi.ch5primitivetypes;
 
 public class PrimitiveType {
     public static short countBits(int x) {
