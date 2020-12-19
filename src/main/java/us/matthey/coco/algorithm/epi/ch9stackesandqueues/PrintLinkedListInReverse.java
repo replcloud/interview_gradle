@@ -1,4 +1,4 @@
-package us.matthey.coco.algorithm.epi.chp9stackesandqueues;
+package us.matthey.coco.algorithm.epi.ch9stackesandqueues;
 
 import us.matthey.coco.algorithm.epi.ch8linkedlists.ListNode;
 
