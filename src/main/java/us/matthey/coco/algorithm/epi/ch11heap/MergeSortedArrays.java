@@ -1,6 +1,5 @@
 package us.matthey.coco.algorithm.epi.ch11heap;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -43,5 +42,6 @@ public class MergeSortedArrays {
             List<Integer> smallestArray = sortedArrays.get(headEntry.arrayId);
             //...
         }
+        return results;
     }
 }

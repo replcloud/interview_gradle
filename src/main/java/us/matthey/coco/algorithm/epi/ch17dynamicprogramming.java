@@ -20,20 +20,25 @@ public class ch17dynamicprogramming {
         int minSum = 0, sum = 0, maxSum = 0;
         for (int i = 0; i < A.size(); i++) {
             sum += A.get(i);
-            if (sum < minSum) {
-                minSum = sum;
-            }
             if (sum - minSum > maxSum) {
                 maxSum = sum - minSum;
+            }
+            if (sum < minSum) {
+                minSum = sum;
             }
         }
         return maxSum;
     }
 
     public static int numCombinationsForFinalScore(int finalScore, List<Integer> individualPlayScores) {
-        int[][] numCombinationsForScore = new int[individualPlayScores.size()][finalScore+1];
-        for (int i=0; i<individualPlayScores.size(); i++) {
-            
+        int[][] numCombinationsForScore = new int[individualPlayScores.size()][finalScore + 1];
+        for (int i = 0; i < individualPlayScores.size(); i++) {
+            numCombinationsForScore[i][0] = 1;
+            for (int j = 1; j < finalScore; j++) {
+                int withoutThisPlay = i - 1 >= 0 ? numCombinationsForScore[i - 1][j] : 0;
+                int withThisPlay = j >= individualPlayScores.get(i) ? numCombinationsForScore[i][j-individualPlayScores.get(i)] : 0;
+            }
         }
+        return numCombinationsForScore[individualPlayScores.size()-1][finalScore];
     }
 }
