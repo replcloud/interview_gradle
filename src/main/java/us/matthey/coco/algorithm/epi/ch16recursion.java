@@ -24,7 +24,6 @@ public class ch16recursion {
             computeTowerHanoiSteps(numRingsToMove, pegs, fromPeg, usePeg, toPeg);
             pegs.get(toPeg).addFirst(pegs.get(fromPeg).remove());
             computeTowerHanoiSteps(numRingsToMove, pegs, usePeg, toPeg, fromPeg);
-
         }
 
     }
