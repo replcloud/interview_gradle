@@ -41,5 +41,20 @@ public class PrimitiveType {
         }
         return (short) (x & 0x1);
     }
+
+    public static long swapBits(long x, int i, int j) {
+        if (((x >>> i) & 1) != ((x >>> j) & 1)) {
+            long bitMask = (1L << i) | (1L << j);
+            x ^= bitMask;
+        }
+        return x;
+    }
+
+    public static long reverseBits(long x) {
+        final int WORLD_SIZE = 16;
+        final int BIT_MASK = 0xFFFF;
+        // TODO
+        return 0;
+    }
 }
 
