@@ -38,4 +38,31 @@ public class LinkedList {
         current.next = p1 != null ? p1 : p2;
         return dummyHead.next;
     }
+
+    public static ListNode<Integer> reverseList(ListNode<Integer> L) {
+        ListNode<Integer> newList = null;
+        while (L != null) {
+            ListNode<Integer> next = L.next;
+            L.next = newList;
+            newList = L;
+            L = next;
+        }
+        return newList;
+    }
+
+    private static ListNode<Integer> generateList(int n) {
+        ListNode<Integer> next = null;
+        for (int i = n; i > 0; i--) {
+            ListNode<Integer> curr = new ListNode<Integer>(i, next);
+            next = curr;
+        }
+        return next;
+    }
+    
+    public static void main(String[] args) {
+        ListNode<Integer> head = generateList(5);
+        System.out.println(head.data);
+        ListNode<Integer> tail = reverseList(head);
+        System.out.println(tail.data);
+    }
 }
