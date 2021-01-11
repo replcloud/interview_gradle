@@ -58,7 +58,7 @@ public class LinkedList {
         }
         return next;
     }
-    
+
     public static void main(String[] args) {
         ListNode<Integer> head = generateList(5);
         System.out.println(head.data);
