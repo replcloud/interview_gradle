@@ -35,7 +35,7 @@ public class TeamPhotoDay2 {
             for (GraphVertex v : u.edges) {
                 v.maxDistance = Math.max(v.maxDistance, u.maxDistance + 1);
             }
-            orderedVertices.removeFirst()
+            orderedVertices.removeFirst();
         }
         return maxDistance;
     }
