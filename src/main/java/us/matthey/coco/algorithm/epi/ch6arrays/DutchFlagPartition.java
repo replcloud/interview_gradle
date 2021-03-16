@@ -115,15 +115,15 @@ public class DutchFlagPartition {
 
     public static List<Integer> generatePrimes2(int n) {
         final int size = (int) Math.floor(0.5 * (n - 3)) + 1;
-        List <Integer> primes = new ArrayList<>();
+        List<Integer> primes = new ArrayList<>();
         primes.add(2);
         List<Boolean> isPrime = new ArrayList<>(Collections.nCopies(size, true));
-        for (int i=0; i<size; i++) {
+        for (int i = 0; i < size; i++) {
             if (isPrime.get(i)) {
                 int p = (i * 2) + 3;
                 primes.add(p);
-                for (long j=(i * i * 2) + 6 * i + 3; j < size; j+=p) {
-                    isPrime.set((int)j, false);
+                for (long j = (i * i * 2) + 6 * i + 3; j < size; j += p) {
+                    isPrime.set((int) j, false);
                 }
             }
         }
@@ -131,7 +131,7 @@ public class DutchFlagPartition {
     }
 
     public static void applyPermutation(List<Integer> perm, List<Integer> A) {
-        for (int i=0; i < A.size(); i++) {
+        for (int i = 0; i < A.size(); i++) {
             int next = i;
             while (perm.get(next) >= 0) {
                 Collections.swap(A, i, perm.get(next));
@@ -140,7 +140,7 @@ public class DutchFlagPartition {
                 next = temp;
             }
         }
-        for (int i=0; i< perm.size(); i++) {
+        for (int i = 0; i < perm.size(); i++) {
             perm.set(i, perm.get(i) + perm.size());
         }
     }
@@ -150,4 +150,20 @@ public class DutchFlagPartition {
         System.out.print(buyAndSellStockTwice(A));
     }
 
+    public static List<Integer> nextPermutation(List<Integer> perm) {
+        int k = perm.size() - 2;
+        while (k >= 0 && perm.get(k) >= perm.get(k + 1)) {
+            k--;
+        }
+        if (k == -1) return Collections.emptyList();
+        Collections.sort((perm.subList(k, perm.size())));
+        for (int i = perm.size() - 1; i > k; --i) {
+            if (perm.get(i) > perm.get(k)) {
+                Collections.swap(perm, k, i);
+                break;
+            }
+        }
+        Collections.reverse(perm.subList(k + 1, perm.size()));
+        return perm;
+    }
 }
